@@ -1,0 +1,28 @@
+services:
+  servidor01:
+    image: base-comunicacao:0.0.1
+    container_name: servidor01
+    hostname: servidor01
+    networks:
+      rede_comunicacao:
+
+  servidor02:
+    image: base-comunicacao:0.0.1
+    container_name: servidor02
+    hostname: servidor02
+    networks:
+      rede_comunicacao:
+
+  servidor03:
+    image: base-comunicacao:0.0.1
+    container_name: servidor03
+    hostname: servidor03
+    networks:
+      rede_comunicacao:
+
+networks:
+  rede_comunicacao:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.0.0.0/29 #Nessa faixa tem 6 IPs válidos.
